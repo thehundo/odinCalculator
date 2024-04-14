@@ -1,0 +1,85 @@
+* {
+    font-family: Arial, sans-serif;
+}
+
+#section {
+    margin: 100px;
+}
+
+#container {
+    width: 420px;
+    margin: auto;
+    background-color: rgba(69, 70, 75, 0.15);
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+}
+
+h1 {
+    text-align: center;
+    flex: 0;
+}
+
+.display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+    font-size: 35px;
+    padding: 0px 10px;
+    background-color: white;
+}
+
+.calc {
+    display: flex;
+}
+
+.calcLeft {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    flex: 3;
+    gap: 3px;
+}
+
+.row {
+    display: flex;
+    flex: auto;
+}
+
+.calcRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    gap: 3px;
+}
+
+.opBtn {
+    background-color: rgba(69, 70, 75, 0.1);
+    color: rgba(69, 70, 75, 0.3);
+    flex: auto;
+    font-size: 1.4em;
+}
+
+.spBtn {
+    background-color: rgba(69, 70, 75, 0.306);
+    color: white;
+    flex: auto;
+    font-size: 1.4em;
+}
+
+.numBtn {
+    background-color: white;
+    color: rgba(69, 70, 75, 0.306);
+    flex: auto;
+}
+
+button {
+    height: 50px;
+    width: 100px;
+    border: none;
+    font-size: 1.2em;
+}
+
