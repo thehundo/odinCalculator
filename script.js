@@ -1,5 +1,6 @@
-let a = 47
-let b = 3
+let a = ''
+let b = ''
+let opVal = ''
 let operator = 'mul'
 
 const addNums = (a, b) => a + b;
@@ -18,9 +19,6 @@ const calculator = {
 const userInput = []
 
 
-function storeInput() {
-
-}
 
 const container = document.querySelector("#container");
 
@@ -55,6 +53,7 @@ makeButton("numBtn", "9", calcLeft);
 makeButton("spBtn", "C", calcLeft);
 
 
+
 const calcRight = document.createElement("div");
 calcRight.classList.add("calcRight");
 calc.appendChild(calcRight);
@@ -71,15 +70,42 @@ function makeButton(cls, val, parent) {
     btn.classList.add(cls);
     btn.textContent = val;
     parent.appendChild(btn);
-    addBtnClick(btn, val)
+    addBtnClick(btn, cls, val)
 }
 
-function addBtnClick(btn, val) {
+function addBtnClick(btn, cls, val) {
     btn.addEventListener("click", function (e) {
-        userInput.push(val);
-        display.textContent = userInput.join(``);
-        console.log(userInput.join(''))       
+        switch (cls) {
+            case 'numBtn':
+                userInput.push(val);
+                display.textContent = userInput.join(``) 
+                break;
+            case 'opBtn':
+                storeValue();
+                opVal = val;
+                e.target.style.back
+                break;
+            case 'spBtn': 
+                clearAll();
+                break;
+
+        }
     })
+}
+
+function clearAll() {
+    a = ''
+    b = ''
+    userInput.length = 0;
+    display.textContent = userInput.join()
+}
+
+function storeValue() {
+    if (a === '') {a = userInput.join('')}
+        else {b = userInput.join('')};
+    userInput.length = 0
+    console.log(a)
+    console.log(b)
 }
 
 console.log(calculator.mul)

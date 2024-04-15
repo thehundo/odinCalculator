@@ -1,5 +1,5 @@
 * {
-    font-family: Arial, sans-serif;
+    font-family: monospace;
 }
 
 #section {
@@ -81,5 +81,9 @@ button {
     width: 100px;
     border: none;
     font-size: 1.2em;
+}
+
+.numBtn:focus {
+    background-color: papayawhip;
 }
 
