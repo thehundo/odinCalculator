@@ -14,12 +14,20 @@ const calculator = {
     div: divNums(a, b),
 }
 
+// Store user input
+const userInput = []
+
+
+function storeInput() {
+
+}
+
 const container = document.querySelector("#container");
 
 // Create display div to show result and add DOM
 const display = document.createElement("div");
 display.classList.add("display");
-display.textContent = calculator.mul;
+//display.textContent = calculator.mul;
 container.appendChild(display);
 
 // Create a div container 'calculator' and add to DOM
@@ -46,8 +54,6 @@ makeButton("numBtn", "8", calcLeft);
 makeButton("numBtn", "9", calcLeft);
 makeButton("spBtn", "C", calcLeft);
 
-// makeBtnRow("row", calcLeft);
-
 
 const calcRight = document.createElement("div");
 calcRight.classList.add("calcRight");
@@ -58,16 +64,6 @@ makeButton("opBtn", "-", calcRight);
 makeButton("opBtn", "+", calcRight);
 makeButton("spBtn", "=", calcRight);
 
-// Create rows
-function makeBtnRow(cls, parent) {
-    const row = document.createElement("div");
-    row.classList.add(cls);
-    parent.appendChild(row);
-    makeButton("numBtn", "7", row);
-    makeButton("numBtn", "8", row);
-    makeButton("numBtn", "9", row);
-}
-
 
 // Create buttons
 function makeButton(cls, val, parent) {
@@ -75,13 +71,16 @@ function makeButton(cls, val, parent) {
     btn.classList.add(cls);
     btn.textContent = val;
     parent.appendChild(btn);
+    addBtnClick(btn, val)
 }
-// const btn = document.createElement("button");
-// btn.classList.add("opBtn")
 
-
-// Create divs on left for 'Clear' and number buttons
-
+function addBtnClick(btn, val) {
+    btn.addEventListener("click", function (e) {
+        userInput.push(val);
+        display.textContent = userInput.join(``);
+        console.log(userInput.join(''))       
+    })
+}
 
 console.log(calculator.mul)
 console.log(operate(a, b, operator));
