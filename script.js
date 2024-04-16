@@ -40,7 +40,6 @@ function operate() {
         mul: multNums(a, b),
         div: divNums(a, b),
     };
-    //storeValue();
     let key = operator;
     console.log(a, key, b);
     // console.log(calculator['add']);
@@ -108,13 +107,12 @@ function addBtnClick(btn, cls, val) {
                 display.textContent = userInput.join(``) 
                 break;
             case 'opBtn':
-                storeValue();
+                if (userInput.join('') !== '') storeValue();
+                if (b !== '') operate();
                 return operator = val;
-                console.log(a, operator, b);
+            case 'spBtn': 
+                clearAll();
                 break;
-            // case 'spBtn': 
-            //     clearAll();
-            //     break;
             case 'equalBtn':
                 storeValue()
                 operate();
@@ -129,13 +127,13 @@ function clearAll() {
     a = ''
     b = ''
     userInput.length = 0;
-    display.textContent = userInput.join() // update display (to blank)
+    display.textContent = userInput.join('') // update display (to blank)
 }
 
 // Store userInput as a (if empty) or b
 function storeValue() {
-    if (a === '') {a = parseInt(userInput.join(''))}
-    else {b = parseInt(userInput.join(''))};
+    if (a === '') {a = parseFloat(userInput.join(''))}
+    else {b = parseFloat(userInput.join(''))};
     userInput.length = 0;
     console.log(`a: ${a}  operator: ${operator}  b: ${b}`) // log current values for operate function
 }
