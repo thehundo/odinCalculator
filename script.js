@@ -1,6 +1,5 @@
 let a = ''
 let b = ''
-// let opVal = ''
 let operator = ''
 
 const addNums = (a, b) => a + b;
@@ -9,7 +8,7 @@ const multNums = (a, b) => a * b;
 const divNums = (a, b) => a / b;
 
 const calculator = {
-    add: addNums(a, b),
+    '+': addNums(a, b),
     sub: subNums(a, b),
     mul: multNums(a, b),
     div: divNums(a, b),
@@ -35,22 +34,16 @@ makeCalcRight();
 
 function operate() {
     const calculator = {
-        add: addNums(a, b),
-        sub: subNums(a, b),
-        mul: multNums(a, b),
-        div: divNums(a, b),
+        "+": addNums(a, b),
+        "-": subNums(a, b),
+        "×": multNums(a, b),
+        "÷": divNums(a, b),
     };
     let key = operator;
     console.log(a, key, b);
-    // console.log(calculator['add']);
     a = calculator[key];
     b = '';
     display.textContent = a;
-}
-
-// Create calculator display
-function makeDisplay() {
-
 }
 
 // Create left side of Calculator
@@ -78,14 +71,10 @@ function makeCalcRight() {
     const calcRight = document.createElement("div");
     calcRight.classList.add("calcRight");
     calc.appendChild(calcRight);
-    makeButton("opBtn", "div", calcRight);
-    makeButton("opBtn", "mul", calcRight);
-    makeButton("opBtn", "sub", calcRight);
-    makeButton("opBtn", "add", calcRight);
-    // makeButton("opBtn", "÷", calcRight);
-    // makeButton("opBtn", "×", calcRight);
-    // makeButton("opBtn", "-", calcRight);
-    // makeButton("opBtn", "+", calcRight);
+    makeButton("opBtn", "÷", calcRight);
+    makeButton("opBtn", "×", calcRight);
+    makeButton("opBtn", "-", calcRight);
+    makeButton("opBtn", "+", calcRight);
     makeButton("equalBtn", "=", calcRight);
 }
 
@@ -115,7 +104,7 @@ function addBtnClick(btn, cls, val) {
                 break;
             case 'equalBtn':
                 storeValue()
-                operate();
+                if (operator !== '') operate();
                 break;
 
         }
@@ -137,17 +126,4 @@ function storeValue() {
     userInput.length = 0;
     console.log(`a: ${a}  operator: ${operator}  b: ${b}`) // log current values for operate function
 }
-
-
-// console.log(calculator.mul)
-// console.log(operate(a, b, operator));
-
-
-
-
-// console.log(addNums(a, b));
-// console.log(subNums(a, b));
-// console.log(multNums(a, b));
-// console.log(divNums(a, b));
-
 

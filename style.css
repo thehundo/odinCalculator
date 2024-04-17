@@ -1,5 +1,5 @@
 * {
-    font-family: monospace;
+    font-family: Verdana;
 }
 
 #section {
@@ -9,16 +9,19 @@
 #container {
     width: 420px;
     margin: auto;
-    background-color: rgba(69, 70, 75, 0.15);
-    padding: 5px;
+    background-color: rgba(69, 70, 75, 0.1);
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 5px
+    gap: 5px;
+    border-radius: 10px;
 }
 
-h1 {
+h2 {
     text-align: center;
+    font-weight: 100;
     flex: 0;
+    color:rgba(69, 70, 75, 0.7)
 }
 
 .display {
@@ -29,6 +32,8 @@ h1 {
     font-size: 35px;
     padding: 0px 10px;
     background-color: white;
+    border-radius: 10px;
+    color:rgba(69, 70, 75, 0.7)
 }
 
 .calc {
@@ -63,9 +68,9 @@ h1 {
     font-size: 1.4em;
 }
 
-.spBtn {
+.spBtn, .equalBtn {
     background-color: rgba(69, 70, 75, 0.306);
-    color: white;
+    color: rgba(235, 235, 235, 1.0);
     flex: auto;
     font-size: 1.4em;
 }
@@ -79,11 +84,14 @@ h1 {
 button {
     height: 60px;
     width: 100px;
-    border: none;
+    border-width: 2px;
+    border-color: rgba(69, 70, 75, 0.206);
+    border-style: solid;
     font-size: 1.2em;
+    border-radius: 10px;
 }
 
-.numBtn:focus {
+button:focus {
     background-color: papayawhip;
 }
 
